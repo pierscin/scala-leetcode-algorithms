@@ -1209,4 +1209,33 @@ object Solution extends App {
     res.toArray
   }
 
+  /** Title: 57. Insert Interval
+    *
+    * Link: https://leetcode.com/problems/insert-interval/
+    *
+    * Difficulty: Medium
+    */
+  def insert(intervals: Array[Array[Int]], a: Array[Int]): Array[Array[Int]] = {
+    val res = mutable.ArrayBuffer.empty[Array[Int]]
+
+    for (i <- intervals.indices) {
+      val b = intervals(i)
+
+      if (b(1) < a(0)) {
+        res += b
+      } else if (a(1) < b(0)) {
+        res += a
+        res.addAll(intervals.drop(i))
+
+        return res.toArray
+      } else {
+        a(0) = b(0) min a(0)
+        a(1) = b(1) max a(1)
+      }
+    }
+
+    res += a
+    res.toArray
+  }
+
 }
