@@ -1258,4 +1258,52 @@ object Solution extends App {
     throw new IllegalArgumentException
   }
 
+  /** Title: 59. Spiral Matrix II
+    *
+    * Link: https://leetcode.com/problems/spiral-matrix-ii/
+    *
+    * Difficulty: Medium
+    */
+  def generateMatrix(n: Int): Array[Array[Int]] = {
+    var minR = 0
+    var maxR = n - 1
+
+    var minC = 0
+    var maxC = n - 1
+
+    val res = Array.ofDim[Int](n, n)
+    var dir = 0
+    var i = 1
+    while (i <= n * n) {
+      if (dir == 0) {
+        for (c <- minC to maxC) {
+          res(minR)(c) = i
+          i += 1
+        }
+        minR += 1
+      } else if (dir == 1) {
+        for (r <- minR to maxR) {
+          res(r)(maxC) = i
+          i += 1
+        }
+        maxC -= 1
+      } else if (dir == 2) {
+        for (c <- (minC to maxC).reverse) {
+          res(maxR)(c) = i
+          i += 1
+        }
+        maxR -= 1
+      } else {
+        for (r <- (minR to maxR).reverse) {
+          res(r)(minC) = i
+          i += 1
+        }
+        minC += 1
+      }
+      dir += 1
+      dir = dir % 4
+    }
+
+    res
+  }
 }
