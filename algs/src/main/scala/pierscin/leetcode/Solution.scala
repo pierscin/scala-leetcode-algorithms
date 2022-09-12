@@ -1113,4 +1113,43 @@ object Solution extends App {
 
     globalMax
   }
+
+  /** Title: 54. Spiral Matrix
+    *
+    * Link: https://leetcode.com/problems/spiral-matrix/
+    *
+    * Difficulty: Medium
+    */
+  def spiralOrder(m: Array[Array[Int]]): List[Int] = {
+    var (minR, maxR, minC, maxC) = (0, m.length - 1, 0, m.head.length - 1)
+    val res = scala.collection.mutable.ArrayBuffer.empty[Int]
+    var dir = 0
+    while (minR <= maxR && minC <= maxC) {
+      if (dir == 0) {
+        val r = minR
+        for (c <- minC to maxC)
+          res += m(r)(c)
+        minR = minR + 1
+      } else if (dir == 1) {
+        val c = maxC
+        for (r <- minR to maxR)
+          res += m(r)(c)
+        maxC = maxC - 1
+      } else if (dir == 2) {
+        val r = maxR
+        for (c <- (minC to maxC).reverse)
+          res += m(r)(c)
+        maxR = maxR - 1
+      } else if (dir == 3) {
+        val c = minC
+        for (r <- (minR to maxR).reverse)
+          res += m(r)(c)
+        minC = minC + 1
+      }
+
+      dir = (dir + 1) % 4
+    }
+
+    res.toList
+  }
 }
