@@ -1238,4 +1238,24 @@ object Solution extends App {
     res.toArray
   }
 
+  /** Title: 58. Length of Last Word
+    *
+    * Link: https://leetcode.com/problems/length-of-last-word/
+    *
+    * Difficulty: Easy
+    */
+  def lengthOfLastWord(s: String): Int = {
+    @tailrec
+    def inner(i: Int, acc: Int): Int = {
+      if (i < 0 || s(i) == ' ') acc
+      else inner(i - 1, acc + 1)
+    }
+
+    for (i <- s.indices.reverse)
+      if (s(i) != ' ')
+        return inner(i, 0)
+
+    throw new IllegalArgumentException
+  }
+
 }
