@@ -1152,4 +1152,32 @@ object Solution extends App {
 
     res.toList
   }
+
+  /** Title: 55. Jump Game
+    *
+    * Link: https://leetcode.com/problems/jump-game/
+    *
+    * Difficulty: Medium
+    */
+  def canJump(xs: Array[Int]): Boolean = {
+    var max = 0
+
+    for (i <- xs.indices) {
+      if (i > max) return false
+
+      max = max max (i + xs(i))
+    }
+
+    true
+  }
+
+  def canJumpRecursive(xs: Array[Int]): Boolean = {
+    @tailrec
+    def inner(i: Int, max: Int): Boolean =
+      if (i == xs.length) true
+      else if (i > max) false
+      else inner(i + 1, max max (i + xs(i)))
+
+    inner(0, 0)
+  }
 }
