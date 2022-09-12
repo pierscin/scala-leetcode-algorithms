@@ -40,3 +40,12 @@
 |     M      | [48. Rotate Image](https://leetcode.com/problems/rotate-image/)                                                                                       |
 |     M      | [49. Group Anagrams](https://leetcode.com/problems/group-anagrams/)                                                                                   |
 |     M      | [50. Pow(x, n)](https://leetcode.com/problems/powx-n/)                                                                                                |
+|     H      | [51. N-Queens](https://leetcode.com/problems/n-queens/)                                                                                               |
+|     H      | [52. N-Queens II](https://leetcode.com/problems/n-queens-ii/)                                                                                         |
+|     M      | [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)                                                                               |
+|     M      | [54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)                                                                                     |
+|     M      | [55. Jump Game](https://leetcode.com/problems/jump-game/)                                                                                             |
+|     M      | [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/)                                                                                 |
+|     M      | [57. Insert Interval](https://leetcode.com/problems/insert-interval/)                                                                                 |
+|     E      | [58. Length of Last Word](https://leetcode.com/problems/length-of-last-word/)                                                                         |
+|     M      | [59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/)                                                                               |
