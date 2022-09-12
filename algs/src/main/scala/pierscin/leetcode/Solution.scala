@@ -1094,4 +1094,23 @@ object Solution extends App {
     }
   }
 
+  /** Title: 53. Maximum Subarray
+    *
+    * Link: https://leetcode.com/problems/maximum-subarray/
+    *
+    * Difficulty: Medium
+    */
+  def maxSubArray(xs: Array[Int]): Int = {
+    var globalMax = xs.head
+    var localMax = xs.head
+
+    for {
+      x <- xs.tail
+    } {
+      localMax = (localMax + x) max x
+      globalMax = localMax max globalMax
+    }
+
+    globalMax
+  }
 }
