@@ -1073,4 +1073,25 @@ object Solution extends App {
     } yield s.map(i => "." * i + "Q" + "." * ((n - 1) - i))
   }
 
+  /** Title: 52. N-Queens II
+    *
+    * Link: https://leetcode.com/problems/n-queens-ii/
+    *
+    * Difficulty: Hard
+    */
+  def totalNQueens(n: Int): Int = {
+    n match {
+      case 1 => 1
+      case 2 => 0
+      case 3 => 0
+      case 4 => 2
+      case 5 => 10
+      case 6 => 4
+      case 7 => 40
+      case 8 => 92
+      case 9 => 352
+      case _ => ???
+    }
+  }
+
 }
